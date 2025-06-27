@@ -4,6 +4,12 @@
 3. Write a Modbus TCP Client  -> Write to Modbus
 4. Write a Modbus TCP Slave   -> Modbus poll read data
 
+# Mind map
+✅ Nhập số trong HTML
+✅ Gửi số đó về Node.js
+✅ Node.js đóng vai Modbus Slave
+✅ Modbus Poll (là Master) sẽ đọc được số đó qua TCP
+
 # Build an interface on HTML
 ```
 <!DOCTYPE html>
