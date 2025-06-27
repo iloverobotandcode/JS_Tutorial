@@ -29,3 +29,18 @@ file:///file_path
 ```
 file:///T:\MUC DICH SONG\2025\KIEN THUC CHUYEN NGANH\JS\code\index.html
 ```
+
+## More examples
+1. Changing the heading for the phrase Hello World!
+```
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Hello World!</h1>
+<h2>Hello World!</h2>
+<h3>Hello World!</h3>
+<h4>Hello World!</h4>
+<h5>Hello World!</h5>
+</body>
+</html> 
+```
