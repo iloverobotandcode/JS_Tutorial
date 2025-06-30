@@ -35,7 +35,53 @@
 </script>
 ```
 ## 3. Viết chương trình Node.js
+```
+// server.js
+const express = require("express");
+const bodyParser = require("body-parser");
+const net = require("net");
+const ModbusRTU = require("modbus-serial");
+const app = express();
+const PORT = 3000;
+const MODBUS_PORT = 5020; // dùng cổng khác 502 để tránh lỗi quyền admin
 
+let holdingRegister = [0]; // thanh ghi giữ giá trị
+
+app.use(bodyParser.json());
+app.use(express.static(__dirname)); // phục vụ index.html
+
+app.post("/write", (req, res) => {
+  const value = req.body.value;
+  if (typeof value === "number") {
+    holdingRegister[0] = value;
+    console.log("Đã nhận giá trị:", value);
+    res.send("✔ Đã ghi giá trị: " + value);
+  } else {
+    res.status(400).send("Giá trị không hợp lệ");
+  }
+});
+
+// Tạo Modbus TCP Slave server
+const modbusServer = new ModbusRTU.ServerTCP({
+  getHoldingRegisters: function(addr, length, cb) {
+    cb(null, holdingRegister.slice(addr, addr + length));
+  }
+}, {
+  host: "127.0.0.1",
+  port: MODBUS_PORT,
+  debug: true,
+  unitID: 1
+});
+
+modbusServer.on("socketError", err => {
+  console.error("Lỗi socket:", err);
+});
+
+app.listen(PORT, () => {
+  console.log(`🟢 Web server đang chạy tại http://localhost:${PORT}`);
+  console.log(`🟢 Modbus TCP Server đang lắng nghe trên cổng ${MODBUS_PORT}`);
+});
+```
 ## 4. Cấu hình Modbus poll
 
 ## 5. Thử nghiệm
