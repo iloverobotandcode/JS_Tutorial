@@ -11,10 +11,7 @@
 - Bước 1.3: Tạo 1 file index.html ==> Mục đích: Nhập giá trị từ trang web [local host] (client)
 - Bước 1.4: Chạy những đoạn chương trình sau trong VSCode => Terminal ==> Mục đích: Tạo các file JSON
   - Lưu ý: Các là phải tạo trong cùng thư mục với project hiện tại
-  - Cài đặt thư viện JSON
-  `
-  npm install express body-parser modbus-serial
-  `
+  - Cài đặt thư viện JSON `npm install express body-parser modbus-serial`
 ## 2. Viết chương trình nhập số liệu HTML
 
 ## 3. Viết chương trình Node.js
