@@ -8,5 +8,5 @@
 
 # List of contents
 1. Part 1: Set up the JS environment and run demo
-2. Part 2: What is the method <getElementById()> used in JS
+2. Part 2: What is the method <getElementById()> using in JS-HTML
 3. Part 3: 
