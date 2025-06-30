@@ -1,149 +1,16 @@
-`
-<!DOCTYPE html>
-<html>
-<body>
+# Target
 
-<h1>Part 2 - getElementById() method in JavaScript and HTML</h1>
+# List of demo
 
-<h2>1 - Demo 1: Submit button</h2>
-<p id="demo1">Submit the test by cliking the button below</p>
-<button type="button" onclick='document.getElementById("demo1").innerHTML = "Submit approved"'>Submit button</button>
+# Go through
+## Demo 1
 
-<h2>2 - Demo 2: Text size modify</h2>
-<p id="demo2" style="font-size:20px;">This size text is 20</p>
-<button type="button" onclick="changeTextSize()">Size text 35</button>
+## Demo 2
 
-<script>
-  function changeTextSize() {
-    var text = document.getElementById('demo2');
-    text.style.fontSize = '35px';
-    text.innerHTML = 'This size text is 35';
-  }
-</script>
+## Demo 3
 
-<h2>3 - Demo 3: Temperature control</h2>
-<p id="demo3">The temperature is: 35 degree Celsius</p>
-<button type="button" onclick="increaseTemp()">Increase</button>
-<button type="button" onclick="decreaseTemp()">Decrease</button>
+## Demo 4
 
-<script>
-  let temp = 35;
+## Demo 5
 
-  function updateDisplay() {
-    document.getElementById('demo3').innerHTML = 
-      'The temperature is: ' + temp + ' degree Celsius';
-  }
-
-  function increaseTemp() {
-    temp++;
-    updateDisplay();
-  }
-
-  function decreaseTemp() {
-    temp--;
-    updateDisplay();
-  }
-</script>
-
-<h2>4 - Demo 4: Password confirm</h2>
-<label for="textEntry">Enter the password here:</label>
-<input type="password" id="textEntry" placeholder="Example: abc@123_321">
-<button onclick="ConfirmPassword()">Confirm</button>
-<input type="checkbox" onclick="togglePassword()"> Hiện mật khẩu
-
-<p id="result"></p>
-<p id="hint"></p>
-
-<script>
-    let errorPass = 0;
-    function togglePassword() {
-        let input = document.getElementById("textEntry");
-        input.type = (input.type === "password") ? "text" : "password";
-    }
-
-    function ConfirmPassword() {
-        const correctPassword = "abc@123_321";
-        let input = document.getElementById("textEntry").value;
-        let result = document.getElementById("result");
-        let hint = document.getElementById("hint");
-        
-
-        if (input === "") {
-        result.innerHTML = "⚠️ Vui lòng nhập mật khẩu.";
-        result.style.color = "orange";
-        } else if (input === correctPassword) {
-        result.innerHTML = "✅ Mật khẩu chính xác!";
-        result.style.color = "green";
-        errorPass = 0;                                              // Password approved ==> Delete password hint
-        } else {
-        result.innerHTML = "❌ Mật khẩu không đúng!";
-        result.style.color = "red";
-        errorPass++;
-        }
-    hintPass();
-    }
-
-    function hintPass() {
-        let hint = document.getElementById("hint");
-        if (errorPass >= 5) {                                       // Wrong more than 5 times ==> Appear password hint
-            hint.innerHTML = "Password hint: abc@123_321";
-            hint.style.color = "green";
-        }
-        else {
-            hint.innerHTML = "";
-        }
-    }
-</script>
-
-<h2>5 - Demo 5: Read more article function</h2>
-<p>Example article: In recent years, technology has taken over our daily lives. Many
-people claim that they simply couldn’t imagine a life without the
-internet and social media. So are your online friendships doing you
-more harm than good?
-It has become commonplace in our society to argue that
-technology is the reason for people being socially distant and
-experiencing loneliness. Some studies do show a correlation
-between social media usage and low self-esteem, although there is
-no solid proof showing that this is the main cause. Indeed, others
-have come to the defence of the internet and claim it has done the
-opposite – helped to revive social relationships. Some people find it
-easier to form relationships when they are hidden behind a screen.
-It allows them to be themselves without fear of rejection, ridicule
-and judgement. Soon, they become confident enough to merge
-their virtual personalities with their offline personalities, becoming
-a more authentic version of themselves.</p>
-<p id="readmore"></p>
-<button onclick="MoreArticle()">Read more article</button>
-<script>
-    function MoreArticle() {
-        readmore.innerText = 
-        `However, it can be said that online relationships are weaker and not as real as face-to-face relationships. 
-        Online relationships are formed easily and quickly. They’re not the same as a physical
-        relationship. You might not know anything about an online friend
-        other than the things they choose to post on the internet. Unless
-        you make a point of communicating with all of them for at least
-        two hours every week, you can’t even call it a real friendship. The
-        strength of an offline relationship lies in the experiences you share
-        together in the real world.
-
-        True, it could be argued that online relationships are not
-        particularly meaningful, but saying that social media friendships
-        are false is not correct. ‘You and your real friends may not
-        always be able to meet in person,’ explains one lifestyle expert.
-        Social media can be used to keep in touch and ensure that your`;
-    }
-</script>
-
-<h2>6 - Demo 6: Hello-Goodbye firgue show</h2>
-<img id="myImage" src="Hello.jpg" width="300">
-<p>Click the button below to change picture</p>
-<button onclick="changeImage()">Greeting</button>
-
-<script>
-  function changeImage() {
-    document.getElementById("myImage").src = "Goodbye.jpg";
-  }
-</script>
-</body>
-</html>
-`
+## Demo 6
